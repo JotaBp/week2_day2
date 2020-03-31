@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASYNC PROGRAMMING</title>
+</head>
+
+<body>
+
+    <button>DETENER CUENTA ATRÁS</button>
+    <p id="result"></p>
+
+    <script>
+
+        // // Example 1
+        // console.log("Previo al proceso asíncrono")
+        // setTimeout(() => alert("¡HOLA!"), 3000)
+        // console.log("Bajo el proceso asíncrono")
+
+
+        const setTimeoutReturn = setTimeout(() => alert("¡HOLA!"), 3000)
+
+        document.querySelectorAll('button')[0].onclick = () => {
+            clearTimeout(setTimeoutReturn)
+            document.querySelector('#result').innerHTML = `Temporizador con ID ${setTimeoutReturn} anulado`
+        }
+
+
+
+
+
+        // // Recursive example
+        // let counter = 1;
+        // const callbackFunction = function () {
+        //     console.log('La función recursiva se ha ejecutado', counter, 'veces');
+        //     timeoutId = setTimeout(callbackFunction, 1000);
+
+        //     counter += 1;
+
+        //     if (counter > 10) {
+        //         clearTimeout(timeoutId)
+        //     }
+        // }
+
+        // let timeoutId = setTimeout(callbackFunction, 1000);
+
+
+    </script>
+</body>
+
+</html>
